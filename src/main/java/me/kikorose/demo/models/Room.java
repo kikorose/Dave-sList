@@ -1,6 +1,8 @@
 package me.kikorose.demo.models;
 
 
+import com.sun.org.apache.xpath.internal.operations.String;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +40,16 @@ public class Room {
 //    @Size(min=20, max=100)
     private String wifi;
 
+//    @NotNull
+  private Boolean privatebathroom;
+
+    public Boolean getPrivatebathroom() {
+        return privatebathroom;
+    }
+
+    public void setPrivatebathroom(Boolean privatebathroom) {
+        this.privatebathroom = privatebathroom;
+    }
 
     public String getDescription() {
         return description;
