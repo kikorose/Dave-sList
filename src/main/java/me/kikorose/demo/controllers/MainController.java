@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
@@ -22,7 +23,7 @@ public class MainController {
 
 
     @PostMapping("/room")
-    public String room(@Valid Room room, BindingResult result) {
+    public String room(@Valid @ModelAttribute Room room, BindingResult result) {
         if (result.hasErrors()) {
             return "room";
         }
